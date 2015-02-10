@@ -3,7 +3,7 @@
 ## cacheSolve then attempt to see if the input object already contains the inverse. If it sees a valid value then 
 ## it knows that the inverse was calculated previously. So instead of doing expensive inverse calculation, it gets
 ## the inverse property and returns right away.
-## cacheSolve only calls the expensive "Solve" operation only if it sees that the inverse was not previously calculated.
+## cacheSolve only calls the expensive "solve" operation only if it sees that the inverse was not previously calculated.
 ## After cacheSolve calls "solve", it would record the result in the inverse property of the input.
 ## The pattern of these 2 functions is very similar to the example makeVector and cacheMean functions.
 
@@ -27,7 +27,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function does "lazy calling" of the "solve" function, meaning it would only calls "solve" when necessary.
+## This function does "lazy calling" of the "solve" function, meaning it would only call "solve" when necessary.
 ## When the "solve" function was previously called, it would just return the cached value.
 cacheSolve <- function(x, ...) {
   i <- x$getinverse()
